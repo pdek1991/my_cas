@@ -1,0 +1,14 @@
+FROM python
+
+WORKDIR /root/cas
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r /root/cas/requirements.txt
+
+VOLUME ["C:\Users\Prashant\Desktop\CAS\dockerdesk\"]
+
+COPY . .
+
+EXPOSE 5050
+EXPOSE 8081
+CMD ["python", "omi.py"]

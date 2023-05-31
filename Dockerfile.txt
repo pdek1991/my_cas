@@ -1,0 +1,16 @@
+FROM python:3.9
+#comment
+WORKDIR /root/cas
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r /root/cas/requirements.txt
+
+VOLUME ["/root/cas"]
+
+COPY . .
+
+EXPOSE 5000
+EXPOSE 8080
+#COPY entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
