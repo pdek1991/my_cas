@@ -4,7 +4,8 @@ import concurrent.futures
 
 input_filename = 'input_data.csv'
 output_filename = 'output_data.csv'
-url = 'http://192.168.56.115:5000/generate_osm'
+#url = 'http://192.168.56.115:5050/generate_osm'
+url = 'http://127.0.0.1:5050/generate_osm'
 num_threads = 1
 
 # Read input data from CSV file

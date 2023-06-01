@@ -3,8 +3,8 @@ import requests
 
 input_filename = 'input_data.csv'
 output_filename = 'output_data.csv'
-url = 'http://192.168.56.115:5050/generate_osm'
-
+#url = 'http://192.168.56.115:5050/generate_osm'
+url = 'http://127.0.0.1:5050/generate_osm'
 # Read input data from CSV file
 # Process each input data entry and write the output
 with open(output_filename, 'w', newline='') as file:

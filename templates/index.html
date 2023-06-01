@@ -62,7 +62,8 @@
         <input type="text" id="device_id" name="device_id" required><br><br>
 
         <label for="expiry">Expiry:</label>
-        <input type="date" id="expiry" name="expiry" required><br><br>
+        <input type="date" id="expiry" name="expiry" pattern="\d{4}-\d{2}-\d{2}" required><br><br>
+
 
         <input type="submit" value="Submit" class="submit">
     </form>

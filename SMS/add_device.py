@@ -1,7 +1,10 @@
 import csv
 import requests
 
-url = "http://192.168.56.115:5050/device_keys"
+#url = "http://192.168.56.115:5050/device_keys"
+
+#locals
+url = "http://127.0.0.1:5050/device_keys"
 
 output_file = open("output.csv", "w", newline="")
 csv_writer = csv.writer(output_file)
