@@ -10,10 +10,10 @@ sock.connect(server_address)
 
 # Start time
 start_time = time.time()
-
+total_bytes = 0
 # Receive or send data using the socket
 # Replace this with your own logic for receiving or sending data
-total_bytes = 0
+
 while True:
     data = sock.recv(1024)  # Receive data
     # data = b"..."  # Send data

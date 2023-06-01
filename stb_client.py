@@ -3,11 +3,14 @@ import struct
 import sys
 import pyaes
 import base64
-
+import time
+import tkinter as tk
 # Define the multicast group and port
 multicast_group = '224.1.1.1'
 port = 5000
 key = 'qwertyuioplkjhgd'
+start_time = time.time()
+total_bytes = 0
 
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -42,14 +45,31 @@ def decrypt_string(key, encrypted_data):
     return plaintext
 
 try:
-    # Receive and process data from the multicast stream
     while True:
+        # Receive and process data from the multicast stream
         data, address = sock.recvfrom(1024)
         plaintext = decrypt_string(key, data)
         print(f"Received data: {plaintext}")
-
+        total_bytes += len(data)
+        
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= 30:
+            # Calculate bytes per second
+            bytes_per_sec = total_bytes / elapsed_time
+            # Print the result
+            print("BW in Kb:", bytes_per_sec/1024)
+            # Reset counters and start time
+            total_bytes = 0
+            start_time = time.time()
+            
 except KeyboardInterrupt:
     # Handle Ctrl+C interruption
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    # Calculate bytes per second
+    bytes_per_sec = total_bytes / elapsed_time
+    # Print the final result
+    print("BW in Kb:", bytes_per_sec/1024)
     print("KeyboardInterrupt: Closing socket.")
     sock.close()
     sys.exit(0)

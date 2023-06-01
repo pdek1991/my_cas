@@ -10,10 +10,16 @@ from flask import Flask, render_template, request, flash, redirect, get_flashed_
 from flask.helpers import url_for
 import json
 import os.path
+from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
+from prometheus_client import push_to_gateway
+
 if not os.path.exists(r'.\Logs'):
     os.makedirs(r'.\Logs')
 
-
+new_devices = 0
+registry = CollectorRegistry()
+devices_added = Gauge('mycas_new_activation', 'New activation', registry=registry)
+pushgateway_url = 'http://192.168.56.11:9091'
 
 bootstrap_servers = '192.168.56.112:9092'
 producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
@@ -117,6 +123,8 @@ def add_entitlement():
    
 @app.route('/device_keys', methods=['GET', 'POST'])
 def device_keys():
+    global new_devices
+    #new_devices = 0
     device_id = request.form['device_id']
     bskeys = request.form['bskeys']
     topic = 'topic_mycas'  
@@ -126,6 +134,10 @@ def device_keys():
     try:
         producer.send(topic, message.encode('utf-8')).get()
         logger.info(f"Message sent to Kafka topic {topic}: {message}")
+        new_devices += 1
+        devices_added.set(new_devices)
+        push_to_gateway(pushgateway_url, job='device_keys', registry=registry)
+        print(new_devices)
     except KafkaError as e:
         logger.error(f"Failed to send message to Kafka: {e}")
     # Acquire a connection from the pool
