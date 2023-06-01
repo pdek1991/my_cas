@@ -6,7 +6,9 @@ from logging.handlers import TimedRotatingFileHandler
 from confluent_kafka import Consumer, KafkaException
 from kafka.errors import KafkaError
 from kafka import KafkaProducer
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, get_flashed_messages
+from flask.helpers import url_for
+import json
 import os.path
 if not os.path.exists(r'.\Logs'):
     os.makedirs(r'.\Logs')
@@ -18,6 +20,7 @@ producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 
 
 app = Flask(__name__)
+app.secret_key = 'pdek1991'
 app.debug = True
 #app.logger.disabled = True
 
@@ -46,7 +49,7 @@ db_config = {
 connection_pool = mysql.connector.pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=10, **db_config)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 @app.route('/generate_osm', methods=['GET', 'POST'])
@@ -76,8 +79,10 @@ def generate_osm():
     # Release the connection back to the pool
     cursor.close()
     connection.close()
-
-    return 'Message saved successfully', 200, {'Content-Type': 'application/json'}
+    flash('Message sent successfully!', 'success')
+    flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
+    return render_template('index.html', flash_messages=flash_messages)
+    #return 'Message saved successfully', 200
 
 @app.route('/addentitlement', methods=['GET', 'POST'])
 def add_entitlement():
@@ -106,9 +111,10 @@ def add_entitlement():
     # Release the connection back to the pool
     cursor.close()
     connection.close()
-
-    return 'Entitlements added successfully', 200
-
+    flash('Entitlement added successfully!', 'success')
+    flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
+    return render_template('index.html', flash_messages=flash_messages)
+   
 @app.route('/device_keys', methods=['GET', 'POST'])
 def device_keys():
     device_id = request.form['device_id']
@@ -136,8 +142,10 @@ def device_keys():
     # Release the connection back to the pool
     cursor.close()
     connection.close()
-
-    return 'Devices added successfully', 200
+    flash('Devices added successfully!', 'success')
+    flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
+    return render_template('index.html', flash_messages=flash_messages)
+    #return 'Devices added successfully', 200
 
 if __name__ == '__main__':
     #app.run()

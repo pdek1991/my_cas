@@ -2,9 +2,9 @@
 from datetime import datetime
 from confluent_kafka import Consumer, KafkaException, KafkaError
 import mysql.connector
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.backends import default_backend
-
+import pyaes
+import base64
+import os
 
 
 
@@ -18,9 +18,6 @@ mysql_host = '192.168.56.112'
 mysql_user = 'omi_user'
 mysql_password = 'omi_user'
 mysql_database = 'cas'
-
-aes_key = b'abcdefghijklmnop'
-aes_iv = b'1234567890abcdef'
 
 # Create Kafka consumer
 consumer = Consumer(conf)
@@ -37,9 +34,28 @@ mysql_connection = mysql.connector.connect(
 )
 mysql_cursor = mysql_connection.cursor()
 
-def encrypt_message(message, key, iv):
-    cipher = AES.new(key, AES.MODE_CBC, iv)
-    ciphertext = cipher.encrypt
+key = 'qwertyuioplkjhgd'
+def encrypt_string(key, plaintext):
+    block_size = 16
+
+    # Generate a random initialization vector (IV)
+    iv = pyaes.Counter(initial_value=0)
+
+    # Create an AES cipher object with the provided key and CTR mode
+    cipher = pyaes.AESModeOfOperationCTR(key.encode('utf-8'), counter=iv)
+
+    # Pad the plaintext to a multiple of the block size
+    padding_length = block_size - (len(plaintext) % block_size)
+    padded_plaintext = plaintext + padding_length * chr(padding_length)
+
+    # Encrypt the padded plaintext
+    ciphertext = cipher.encrypt(padded_plaintext.encode('utf-8'))
+
+    # Encode the ciphertext in base64 for representation
+    encrypted_data = base64.b64encode(ciphertext).decode('utf-8')
+
+    return encrypted_data
+
 
 try:
     while True:
@@ -59,7 +75,7 @@ try:
         else:
             # Process the message
             #encrypted_data = encrypt_message(msg.value(), aes_key, aes_iv)
-            encrypted_data = msg.value()
+            encrypted_data = encrypt_string(key, msg.value().decode('utf-8'))
             start_time = int(datetime.now().timestamp())
 
             # Parse the last column of the message to extract the date
@@ -83,14 +99,4 @@ finally:
     mysql_cursor.close()
     mysql_connection.close()
 
-# AES encryption function
-#def encrypt_message(message, key, iv):
- #   cipher = AES.new(key, AES.MODE_CBC, iv)
-  #  ciphertext = cipher.encrypt
 
-def encrypt_message(message, key, iv):
-    backend = default_backend()
-    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
-    encryptor = cipher.encryptor()
-    encrypted_data = encryptor.update(message) + encryptor.finalize()
-    return encrypted_data

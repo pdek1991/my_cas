@@ -38,7 +38,21 @@
         h1 {
             margin-top: 100px;
         }
+         /* Styling for the pop-up */
+         #popupMessage {
+            position: fixed;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #69fa6e;
+            color: rgb(3, 0, 0);
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
+            border-radius: 10px;
+        }
     </style>
+        
 </head>
 <body>
     <div class="banner-top"></div>
@@ -49,6 +63,32 @@
     </div>
 
     <div class="banner-left"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to display the pop-up message
+            function displayPopupMessage() {
+                // Get the flash message text from Flask
+                var flashMessage = "{{ get_flashed_messages()|first }}";
+
+                // Create a new div element for the pop-up
+                var popupDiv = $('<div>').attr('id', 'popupMessage')
+                                          .text(flashMessage);
+
+                // Add the pop-up div to the body of the page
+                $('body').prepend(popupDiv);
+
+                // Close the pop-up automatically after 10 seconds
+                setTimeout(function() {
+                    popupDiv.remove();
+                }, 10000);
+            }
+
+            // Call the function to display the pop-up message
+            displayPopupMessage();
+        });
+    </script>
 
     <h2>Generate OSM</h2>
     <form action="/generate_osm" method="post">
