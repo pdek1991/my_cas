@@ -1,10 +1,11 @@
+#pdek
 import socket
 import struct
 import sys
 import pyaes
 import base64
 import time
-import tkinter as tk
+#import tkinter as tk
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 from prometheus_client import push_to_gateway
 
@@ -50,29 +51,30 @@ def decrypt_string(key, encrypted_data):
     return plaintext
 
 # Create a Tkinter window
-window = tk.Tk()
-window.title("STB")
-window.geometry("300x100")  # Set the window size
+#window = tk.Tk()
+#window.title("STB")
+#window.geometry("300x100")  # Set the window size
 
 # Create a label to display the received data
-data_label = tk.Label(window, text="")
-data_label.pack()
+#data_label = tk.Label(window, text="")
+#data_label.pack()
 
 # Function to update the label text with received data
 def update_data_label(text):
     columns = text.split(':')
     if columns[0] == '7010000013' and columns[3] == '44':
         # Display the 2nd column on the GUI
-        message_label.config(text=columns[2])
+        #message_label.config(text=columns[2])
         print(columns[2])
         
         
     else:
-        message_label.config(text="error")
+        print('error')
+        #message_label.config(text="error")
     
 
     # Update the Tkinter event loop
-    window.update()
+    #window.update()
     
 # Function to start receiving data
 def start_receiving():
@@ -101,15 +103,17 @@ def start_receiving():
             # Update the label in the GUI with received data
             #window.after(0, update_data_label, plaintext)
             
+
             columns = plaintext.split(':')
-            if columns[0] == '7010000013' and columns[3] == '44':
+            print(columns[0])
+            if columns[0] == '7010000902' and columns[3] == '44':
                 # Display the 2nd column on the GUI
-                message_label.config(text=columns[2])
+                #message_label.config(text=columns[2])
                 print(columns[2])
-                window.update()
+                #window.update()
             #update_data_label(plaintext)
             # Update the Tkinter event loop
-            window.update()
+            #window.update()
             
     except KeyboardInterrupt:
         # Handle Ctrl+C interruption
@@ -124,11 +128,11 @@ def start_receiving():
         sys.exit(0)
 
 # Create a label to display the filtered data
-message_label = tk.Label(window, text="")
-message_label.pack()
+#message_label = tk.Label(window, text="")
+#message_label.pack()
 
 # Start receiving data
 start_receiving()
 
 # Run the Tkinter event loop
-window.mainloop()
+#window.mainloop()

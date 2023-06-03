@@ -1,7 +1,7 @@
 import csv
 import requests
-#url = 'http://192.168.56.115:5050/generate_osm'
-url = 'http://127.0.0.1:5050/generate_osm'
+url = 'http://192.168.56.11:5000/generate_osm'
+#url = 'http://127.0.0.1:5050/generate_osm'
 
 with open('input_data.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)

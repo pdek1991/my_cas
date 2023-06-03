@@ -1,0 +1,105 @@
+02-06-2023:00:04:25.451 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:04:25.456 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:04:25.458 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:13:03.524 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:13:03.526 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:13:03.527 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:13:03.545 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:13:14.274 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:13:14.275 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:13:14.276 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:13:14.376 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:13:14.376 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:14:00.934 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:14:00.935 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:14:00.936 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:14:00.954 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:14:04.537 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:14:09.756 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:14:09.757 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:14:09.861 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:14:09.862 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:14:09.864 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:14:54.434 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:14:54.436 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:14:54.437 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:14:54.459 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:15:00.276 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:15:00.277 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:15:00.278 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:15:00.379 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:15:00.381 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:15:43.131 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:15:43.133 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:15:43.134 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:15:43.151 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:20:39.492 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:20:39.494 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:20:39.495 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:27:01.964 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:27:01.965 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:27:02.059 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:27:02.060 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:27:02.061 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:30:32.703 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:30:32.705 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:30:32.705 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:30:32.722 INFO     Message sent to Kafka topic topic_mycas: 7070707070:70707070705467:10:2037-12-31
+02-06-2023:00:30:33.025 INFO     device_id: 7070707070 bskeys: 70707070705467 
+02-06-2023:00:35:27.368 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:35:27.370 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:35:27.370 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:36:26.302 INFO     Message sent to Kafka topic topic_mycas: 7080808080:70808080805678:10:2037-12-31
+02-06-2023:00:36:26.369 INFO     device_id: 7080808080 bskeys: 70808080805678 
+02-06-2023:00:36:50.782 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:36:50.783 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:36:50.784 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:36:50.875 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:36:50.876 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:37:42.736 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:37:42.739 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:37:42.740 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:37:42.758 INFO     Message sent to Kafka topic topic_mycas: 7080808080:70808080802345:10:2037-12-31
+02-06-2023:00:37:42.807 INFO     device_id: 7080808080 bskeys: 70808080802345 
+02-06-2023:00:37:53.935 INFO     Message sent to Kafka topic topic_mycas: 7090909090:70909090908765:10:2037-12-31
+02-06-2023:00:37:53.990 INFO     device_id: 7090909090 bskeys: 70909090908765 
+02-06-2023:00:38:27.248 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:38:27.248 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:38:32.628 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:38:32.629 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:38:32.741 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:38:32.742 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:38:44.290 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:38:44.292 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:38:44.293 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:38:44.309 INFO     Message sent to Kafka topic topic_mycas: 7080808080:7080808080553:10:2037-12-31
+02-06-2023:00:39:40.041 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:39:40.042 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:39:43.686 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:39:43.687 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:39:43.772 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:39:43.773 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:39:54.088 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:00:39:54.089 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:00:39:54.091 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:39:54.104 INFO     Message sent to Kafka topic topic_mycas: 7080808080:70808080804567:10:2037-12-31
+02-06-2023:00:39:54.163 INFO     device_id: 7080808080 bskeys: 70808080804567 
+02-06-2023:00:40:03.419 INFO     Message sent to Kafka topic topic_mycas: 7090909090:70909090904567:10:2037-12-31
+02-06-2023:00:40:03.479 INFO     device_id: 7090909090 bskeys: 70909090904567 
+02-06-2023:00:41:15.760 INFO     Message sent to Kafka topic topic_mycas: 7060606060:70606060605678:10:2037-12-31
+02-06-2023:00:41:15.812 INFO     device_id: 7060606060 bskeys: 70606060605678 
+02-06-2023:00:41:54.694 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:41:54.694 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:00:41:54.695 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:00:41:54.814 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:00:41:54.815 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:01:00:55.304 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+02-06-2023:01:00:55.306 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+02-06-2023:01:00:55.307 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+02-06-2023:01:00:55.334 INFO     Message sent to Kafka topic topic_mycas:7010000017:DEN_NM:21:2023-07-08:2023-07-08
+02-06-2023:01:00:55.335 INFO     device_id: 7010000017, package_id: DEN_NM, expiry: 2023-07-08
+02-06-2023:01:01:08.034 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:01:01:08.034 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:01:01:08.153 INFO     Closing the Kafka producer with 0 secs timeout.
+02-06-2023:01:01:08.154 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+02-06-2023:01:01:08.157 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 

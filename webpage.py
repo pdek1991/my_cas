@@ -120,7 +120,7 @@ def add_entitlement():
     flash('Entitlement added successfully!', 'success')
     flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
     return render_template('index.html', flash_messages=flash_messages)
-   
+    
 @app.route('/device_keys', methods=['GET', 'POST'])
 def device_keys():
     global new_devices
