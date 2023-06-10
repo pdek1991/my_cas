@@ -1,11 +1,11 @@
 FROM python
 #comment
-WORKDIR /root/CLIENT
+WORKDIR /root/mycas/CLIENT
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r /root/CLIENT/requirements.txt
+RUN pip install --no-cache-dir -r /root/mycas/CLIENT/requirements.txt
 
-VOLUME ["/root/CLIENT"]
+VOLUME ["/root/mycas/CLIENT"]
 
 COPY . .
 CMD ["python", "stb_client.py"]

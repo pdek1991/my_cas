@@ -161,4 +161,4 @@ def device_keys():
 
 if __name__ == '__main__':
     #app.run()
-    app.run(port='8000')
+    app.run(host='192.168.56.115',port='8000')

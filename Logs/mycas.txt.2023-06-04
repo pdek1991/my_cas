@@ -1,0 +1,11 @@
+04-06-2023:20:54:08.826 INFO     Closing the Kafka producer with 0 secs timeout.
+04-06-2023:20:54:08.830 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+04-06-2023:20:54:59.226 INFO     Closing the Kafka producer with 0 secs timeout.
+04-06-2023:20:54:59.227 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+04-06-2023:20:54:59.312 INFO     Closing the Kafka producer with 0 secs timeout.
+04-06-2023:20:54:59.312 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+04-06-2023:20:55:45.591 INFO     Closing the Kafka producer with 0 secs timeout.
+04-06-2023:20:55:45.592 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+04-06-2023:20:55:45.593 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+04-06-2023:20:55:45.674 INFO     Closing the Kafka producer with 0 secs timeout.
+04-06-2023:20:55:45.674 INFO     Proceeding to force close the producer since pending requests could not be completed within timeout 0.

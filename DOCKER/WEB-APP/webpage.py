@@ -52,7 +52,7 @@ db_config = {
     "database": "cas",
 }
 
-connection_pool = mysql.connector.pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=10, **db_config)
+connection_pool = mysql.connector.pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=5, **db_config)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -87,7 +87,7 @@ def generate_osm():
     connection.close()
     flash('Message sent successfully!', 'success')
     flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
-    return render_template('index.html', flash_messages=flash_messages)
+    return render_template('index.html/', flash_messages=flash_messages)
     #return 'Message saved successfully', 200
 
 @app.route('/addentitlement', methods=['GET', 'POST'])
@@ -158,6 +158,11 @@ def device_keys():
     flash_messages = json.dumps(dict(get_flashed_messages(with_categories=True)))
     return render_template('index.html', flash_messages=flash_messages)
     #return 'Devices added successfully', 200
+
+@app.route('/success', methods=['GET'])
+def success():
+    return 'Healthy-swarm01', 200
+
 
 if __name__ == '__main__':
     #app.run()

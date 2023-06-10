@@ -1,0 +1,29 @@
+05-06-2023:16:45:33.068 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: connecting to 192.168.56.112:9092 [('192.168.56.112', 9092) IPv4]
+05-06-2023:16:45:33.077 INFO     <BrokerConnection node_id=0 host=192.168.56.112:9092 <connecting> [IPv4 ('192.168.56.112', 9092)]>: Connection complete.
+05-06-2023:16:45:33.078 INFO     <BrokerConnection node_id=bootstrap-0 host=192.168.56.112:9092 <connected> [IPv4 ('192.168.56.112', 9092)]>: Closing connection. 
+05-06-2023:16:45:33.117 INFO     Message sent to Kafka topic topic_mycas: 7010000010:10000000:Test Message 1:44:2023-07-21
+05-06-2023:16:45:33.426 INFO     message_id: 10000000, message_text: Test Message 1, device_id: 7010000010, expiry: 2023-07-21
+05-06-2023:16:45:33.737 INFO     Message sent to Kafka topic topic_mycas: 7010000013:10000003:Test Message 4:44:2023-07-21
+05-06-2023:16:45:33.849 INFO     message_id: 10000003, message_text: Test Message 4, device_id: 7010000013, expiry: 2023-07-21
+05-06-2023:16:45:34.108 INFO     Message sent to Kafka topic topic_mycas: 7010000016:10000006:Test Message 7:44:2023-07-21
+05-06-2023:16:45:34.681 INFO     message_id: 10000006, message_text: Test Message 7, device_id: 7010000016, expiry: 2023-07-21
+05-06-2023:16:45:35.063 INFO     Message sent to Kafka topic topic_mycas: 7010000019:10000009:Test Message 10:44:2023-07-21
+05-06-2023:16:45:35.215 INFO     message_id: 10000009, message_text: Test Message 10, device_id: 7010000019, expiry: 2023-07-21
+05-06-2023:16:45:35.637 INFO     Message sent to Kafka topic topic_mycas: 7010000022:10000012:Test Message 13:44:2023-07-21
+05-06-2023:16:45:35.766 INFO     message_id: 10000012, message_text: Test Message 13, device_id: 7010000022, expiry: 2023-07-21
+05-06-2023:16:45:36.108 INFO     Message sent to Kafka topic topic_mycas: 7010000025:10000015:Test Message 16:44:2023-07-21
+05-06-2023:16:45:36.175 INFO     message_id: 10000015, message_text: Test Message 16, device_id: 7010000025, expiry: 2023-07-21
+05-06-2023:16:45:36.516 INFO     Message sent to Kafka topic topic_mycas: 7010000028:10000018:Test Message 19:44:2023-07-21
+05-06-2023:16:45:36.624 INFO     message_id: 10000018, message_text: Test Message 19, device_id: 7010000028, expiry: 2023-07-21
+05-06-2023:16:45:36.893 INFO     Message sent to Kafka topic topic_mycas: 7010000031:10000021:Test Message 22:44:2023-07-21
+05-06-2023:16:45:37.010 INFO     message_id: 10000021, message_text: Test Message 22, device_id: 7010000031, expiry: 2023-07-21
+05-06-2023:16:45:37.319 INFO     Message sent to Kafka topic topic_mycas: 7010000034:10000024:Test Message 25:44:2023-07-21
+05-06-2023:16:45:37.484 INFO     message_id: 10000024, message_text: Test Message 25, device_id: 7010000034, expiry: 2023-07-21
+05-06-2023:16:45:37.746 INFO     Message sent to Kafka topic topic_mycas: 7010000037:10000027:Test Message 28:44:2023-07-21
+05-06-2023:16:45:37.792 INFO     message_id: 10000027, message_text: Test Message 28, device_id: 7010000037, expiry: 2023-07-21
+05-06-2023:16:45:38.074 INFO     Message sent to Kafka topic topic_mycas: 7010000040:10000030:Test Message 31:44:2023-07-21
+05-06-2023:16:45:38.144 INFO     message_id: 10000030, message_text: Test Message 31, device_id: 7010000040, expiry: 2023-07-21
+05-06-2023:16:45:38.723 INFO     Message sent to Kafka topic topic_mycas: 7010000043:10000033:Test Message 34:44:2023-07-21
+05-06-2023:16:45:38.808 INFO     message_id: 10000033, message_text: Test Message 34, device_id: 7010000043, expiry: 2023-07-21
+05-06-2023:16:45:39.132 INFO     Message sent to Kafka topic topic_mycas: 7010000046:10000036:Test Message 37:44:2023-07-21
+05-06-2023:16:45:39.243 INFO     message_id: 10000036, message_text: Test Message 37, device_id: 7010000046, expiry: 2023-07-21

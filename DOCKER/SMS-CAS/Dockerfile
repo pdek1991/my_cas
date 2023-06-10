@@ -1,12 +1,12 @@
 FROM python
 #comment
-WORKDIR /root/SMS-CAS
+WORKDIR /root/mycas/SMS-CAS
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r /root/SMS-CAS/requirements.txt
+RUN pip install --no-cache-dir -r /root/mycas/SMS-CAS/requirements.txt
 
-VOLUME ["/root/SMS-CAS"]
+VOLUME ["/root/mycas/SMS-CAS"]
 
 COPY . .
 

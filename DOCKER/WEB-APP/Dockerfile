@@ -1,12 +1,12 @@
 FROM python
 #comment
-WORKDIR /root/WEB-APP
+WORKDIR /root/mycas/WEB-APP
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r /root/WEB-APP/requirements.txt
+RUN pip install --no-cache-dir -r /root/mycas/WEB-APP/requirements.txt
 
-VOLUME ["/root/WEB-APP"]
+VOLUME ["/root/mycas/WEB-APP"]
 
 COPY . .
 

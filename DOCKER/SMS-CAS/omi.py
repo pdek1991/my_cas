@@ -6,8 +6,13 @@ from confluent_kafka import Consumer, KafkaException
 from kafka.errors import KafkaError
 from kafka import KafkaProducer
 import os.path
-if not os.path.exists(r'.\Logs'):
-    os.makedirs(r'.\Logs')
+import threading
+from threading import Timer, local
+import time
+from datetime import datetime
+from collections import defaultdict
+if not os.path.exists(r'./Logs'):
+    os.makedirs(r'./Logs')
 
 
 
@@ -16,12 +21,51 @@ producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'qwerty'
 
+osm_count = 0
+entitlement_count = 0
+device_count = 0
+
+osm_start_time = time.time()
+entitlement_start_time = time.time()
+device_start_time = time.time()
+
+osm_rps = 0
+entitlement_rps = 0
+device_rps = 0
+
+def update_rps():
+    global osm_count,entitlement_count, device_count, osm_start_time, entitlement_start_time, device_start_time, osm_rps, device_rps, entitlement_rps
+
+    # Calculate the elapsed time
+    osm_elapsed_time = time.time() - osm_start_time
+    entitlement_elapsed_time = time.time() - entitlement_start_time
+    device_elapsed_time = time.time() - device_start_time
+    # Calculate the requests per second
+    osm_rps = osm_count / osm_elapsed_time
+    entitlement_rps = entitlement_count / entitlement_elapsed_time
+    device_rps = device_count / device_elapsed_time
+    # Reset the request count and start time
+    osm_count = 0
+    entitlement_count = 0
+    device_count = 0
+    osm_start_time = time.time()
+    entitlement_start_time = time.time()
+    device_start_time = time.time()
+        # Schedule the next update
+    
+    file_path = "tps.txt"
+    file = open(file_path, "w")
+    tps=int(osm_rps+device_rps+entitlement_rps)
+    file.write(str(tps))
+    file.close()
+    Timer(30, update_rps).start()
 #app.logger.disabled = True
 
 
 logging.basicConfig(format='%(asctime)s.%(msecs)03d %(levelname)-8s %(message)s', datefmt='%d-%m-%Y:%H:%M:%S', level=logging.DEBUG,
-                        handlers=[TimedRotatingFileHandler(filename=r'.\Logs\mycas.txt', backupCount=10, when='midnight', interval=1)])
+                        handlers=[TimedRotatingFileHandler(filename=r'./Logs/mycas.txt', backupCount=10, when='midnight', interval=1)])
 logger = logging.getLogger(__name__)
 
 flask_logger = logging.getLogger('werkzeug')
@@ -44,6 +88,8 @@ db_config = {
 connection_pool = mysql.connector.pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=10, **db_config)
 @app.route('/generate_osm', methods=['POST'])
 def generate_osm():
+    global osm_count
+    osm_count += 1
     message_id = request.json['message_id']
     message_text = request.json['message_text']
     device_id = request.json['device_id']
@@ -74,6 +120,8 @@ def generate_osm():
 
 @app.route('/addentitlement', methods=['POST'])
 def add_entitlement():
+    global entitlement_count
+    entitlement_count += 1
     device_id = request.json['device_id']
     package_ids = request.json['package_ids']
     expiry = request.json['expiry']
@@ -104,6 +152,8 @@ def add_entitlement():
 
 @app.route('/device_keys', methods=['POST'])
 def device_keys():
+    global device_count
+    device_count += 1
     device_id = request.json['device_id']
     bskeys = request.json['bskeys']
     topic = 'topic_mycas'  
@@ -134,4 +184,5 @@ def device_keys():
 
 if __name__ == '__main__':
     #app.run()
+    Timer(30, update_rps).start()
     app.run(host='0.0.0.0', port='5000')

@@ -1,11 +1,11 @@
 FROM python
 #comment
-WORKDIR /root/STB
+WORKDIR /root/mycas/STB
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r /root/STB/requirements.txt
+RUN pip install --no-cache-dir -r /root/mycas/STB/requirements.txt
 
-VOLUME ["/root/STB"]
+VOLUME ["/root/mycas/STB"]
 
 COPY . .
 CMD ["python", "stb.py"]

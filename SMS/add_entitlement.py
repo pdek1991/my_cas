@@ -1,9 +1,9 @@
 import csv
 import requests
 
-url = "http://192.168.56.11:5000/addentitlement"
+#url = "http://192.168.56.11:5000/addentitlement"
 #Local
-#url = "http://127.0.0.1:5050/addentitlement"
+url = "http://192.168.56.115:5050/addentitlement"
 
 output_file = open("output.csv", "w", newline="")
 csv_writer = csv.writer(output_file)
